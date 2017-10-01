@@ -35,6 +35,7 @@ public class TransacaoService {
 
         double numeroDeDias = TimeUnit.DAYS.convert(intervaloEntreDatas, TimeUnit.MILLISECONDS);
         System.out.println(numeroDeDias);
+        
 
         //A: Tranferências no mesmo dia do agendamento tem uma taxa de $3 mais 3% do valor a ser transferido;
         if (numeroDeDias == 0.0) {
