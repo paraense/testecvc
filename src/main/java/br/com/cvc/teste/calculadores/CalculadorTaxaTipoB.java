@@ -9,16 +9,16 @@ package br.com.cvc.teste.calculadores;
  *
  * @author johngomes
  */
-public class CalculadorTaxaTipoB extends CalculadorAbstract{
+public class CalculadorTaxaTipoB extends CalculadoraTaxa{
     
     private static final double VALOR_DA_TAXA_PADRAO = 12.0;
 
-    public CalculadorTaxaTipoB(CalculadorAbstract proximo) {
+    public CalculadorTaxaTipoB(CalculadoraTaxa proximo) {
         super(proximo);
     }
 
     @Override
-    public double calculaTaxa(double valor, double numeroDeDias) {
+    public double calculaTaxa(double valor, long numeroDeDias) {
          if (numeroDeDias > 0 && numeroDeDias <= 10){
             return VALOR_DA_TAXA_PADRAO;
          }

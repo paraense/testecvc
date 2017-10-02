@@ -9,19 +9,19 @@ package br.com.cvc.teste.calculadores;
  *
  * @author johngomes
  */
-public abstract class CalculadorAbstract {
+public abstract class CalculadoraTaxa {
 
-    private CalculadorAbstract proximo;
+    private CalculadoraTaxa proximo;
 
-    public CalculadorAbstract(CalculadorAbstract proximo) {
+    public CalculadoraTaxa(CalculadoraTaxa proximo) {
         this.proximo = proximo;
     }
     
-    public double getTaxa(double valor, double numeroDeDias){
+    public double getTaxa(double valor, long numeroDeDias){
         double taxa = calculaTaxa(valor, numeroDeDias);
-        return numeroDeDias == -1 ? proximo.getTaxa(valor, numeroDeDias) : taxa;
+        return taxa == -1 ? proximo.getTaxa(valor, numeroDeDias) : taxa;
     }
     
-    public abstract double calculaTaxa(double valor, double numeroDeDias);
+    public abstract double calculaTaxa(double valor, long numeroDeDias);
 
 }

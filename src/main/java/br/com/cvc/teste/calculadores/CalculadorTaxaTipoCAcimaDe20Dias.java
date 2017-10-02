@@ -11,16 +11,16 @@ import br.com.cvc.teste.utils.CalculadoraUtils;
  *
  * @author johngomes
  */
-public class CalculadorTaxaTipoCAcimaDe20Dias extends CalculadorAbstract{
+public class CalculadorTaxaTipoCAcimaDe20Dias extends CalculadoraTaxa{
     
     private static final double PERCENTUAL = 6.9;
 
-    public CalculadorTaxaTipoCAcimaDe20Dias(CalculadorAbstract proximo) {
+    public CalculadorTaxaTipoCAcimaDe20Dias(CalculadoraTaxa proximo) {
         super(proximo);
     }
 
     @Override
-    public double calculaTaxa(double valor, double numeroDeDias) {
+    public double calculaTaxa(double valor, long numeroDeDias) {
         if(numeroDeDias > 20 && numeroDeDias <= 30){
           return CalculadoraUtils.calculaValorSobPercentual(valor, PERCENTUAL);
         }

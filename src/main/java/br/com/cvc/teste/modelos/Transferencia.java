@@ -1,6 +1,7 @@
-package br.com.cvc.teste.entidades;
+package br.com.cvc.teste.modelos;
 
-import java.util.Calendar;
+import java.time.Duration;
+import java.time.LocalDate;
 
 /**
  *
@@ -12,15 +13,22 @@ public class Transferencia {
     private Conta remetente;
     private Conta destinatario;
     
-    private Calendar dataOperacao;
-    private Calendar dataTransferencia;
+    private LocalDate dataOperacao;
+    private LocalDate dataTransferencia;
 
     private double valor;
     private double taxa;
     
     private double valorFinal;
+    
+    public Transferencia(LocalDate dataTransferencia, double valor) {
+		this.dataTransferencia = dataTransferencia;
+		this.dataOperacao = LocalDate.now();
+		this.valor = valor;
+		
+	}
 
-    public Conta getRemetente() {
+	public Conta getRemetente() {
         return remetente;
     }
 
@@ -36,19 +44,19 @@ public class Transferencia {
         this.destinatario = destinatario;
     }
 
-    public Calendar getDataOperacao() {
+    public LocalDate getDataOperacao() {
         return dataOperacao;
     }
 
-    public void setDataOperacao(Calendar dataOperacao) {
+    public void setDataOperacao(LocalDate dataOperacao) {
         this.dataOperacao = dataOperacao;
     }
 
-    public Calendar getDataTransferencia() {
+    public LocalDate getDataTransferencia() {
         return dataTransferencia;
     }
 
-    public void setDataTransferencia(Calendar dataTransferencia) {
+    public void setDataTransferencia(LocalDate dataTransferencia) {
         this.dataTransferencia = dataTransferencia;
     }
 
@@ -76,9 +84,7 @@ public class Transferencia {
         this.valorFinal = valorFinal;
     }
     
-    
-    
-    
-    
-    
+    public long getIntervaloDias() {
+    	return Duration.between(dataOperacao.atStartOfDay(), dataTransferencia.atStartOfDay()).toDays();
+    }
 }

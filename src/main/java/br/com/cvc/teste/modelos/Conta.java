@@ -1,4 +1,4 @@
-package br.com.cvc.teste.entidades;
+package br.com.cvc.teste.modelos;
 
 /**
  *
