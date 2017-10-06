@@ -1,4 +1,5 @@
-package br.com.cvc.teste.application;
+package br.com.cvc.teste;
+
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;

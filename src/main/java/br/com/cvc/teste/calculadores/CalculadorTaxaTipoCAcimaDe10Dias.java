@@ -8,7 +8,7 @@ import br.com.cvc.teste.utils.CalculadoraUtils;
  */
 public class CalculadorTaxaTipoCAcimaDe10Dias extends CalculadoraTaxa {
     
-    private static final double PERCENTUAL = 8.2;
+    private final double PERCENTUAL = 8.0;
 
     public CalculadorTaxaTipoCAcimaDe10Dias(CalculadoraTaxa proximo) {
         super(proximo);

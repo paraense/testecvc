@@ -4,12 +4,15 @@ import org.junit.Assert;
 import org.junit.Before;
 import org.junit.Test;
 
+import br.com.cvc.teste.calculadores.CalculadorTaxaTipoCAcimaDe20Dias;
+import br.com.cvc.teste.calculadores.CalculadoraTaxa;
+
 public class CalculadorTaxaTipoCAcimaDe20DiasTest {
 	
 	private CalculadoraTaxa calculadoraDeTaxa;
 	private long numeroDeDias;
 	private double valor = 100.0;
-	private final double TAXA_PADRAO = 6.9;
+	private final double TAXA_PADRAO = 6.0;
 
 	@Before
 	public void setup() {

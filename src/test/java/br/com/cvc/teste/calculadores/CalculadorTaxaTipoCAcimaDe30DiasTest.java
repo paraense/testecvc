@@ -4,12 +4,15 @@ import org.junit.Assert;
 import org.junit.Before;
 import org.junit.Test;
 
+import br.com.cvc.teste.calculadores.CalculadorTaxaTipoCAcimaDe30Dias;
+import br.com.cvc.teste.calculadores.CalculadoraTaxa;
+
 public class CalculadorTaxaTipoCAcimaDe30DiasTest {
 	
 	private CalculadoraTaxa calculadoraDeTaxa;
 	private long numeroDeDias;
-	private double valor = 100.0;
-	private final double TAXA_PADRAO = 4.7;
+	private double valor = 131.0;
+	private final double RETORNO_ESPERADO = 5.24;
 
 	@Before
 	public void setup() {
@@ -21,7 +24,7 @@ public class CalculadorTaxaTipoCAcimaDe30DiasTest {
 		numeroDeDias = 31;
 
 		double taxa = calculadoraDeTaxa.calculaTaxa(valor, numeroDeDias);
-		Assert.assertEquals(TAXA_PADRAO, taxa, 0);
+		Assert.assertEquals(RETORNO_ESPERADO, taxa, 0);
 	}
 	
 	
@@ -31,7 +34,7 @@ public class CalculadorTaxaTipoCAcimaDe30DiasTest {
 
 		double taxa = calculadoraDeTaxa.calculaTaxa(valor, numeroDeDias);
 		
-		Assert.assertNotEquals(0, TAXA_PADRAO, taxa);
+		Assert.assertNotEquals(RETORNO_ESPERADO, taxa, 0);
 		Assert.assertEquals(-1.0,taxa, 0.0);
 		
 	}

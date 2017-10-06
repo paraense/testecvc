@@ -19,7 +19,12 @@ public abstract class CalculadoraTaxa {
     
     public double getTaxa(double valor, long numeroDeDias){
         double taxa = calculaTaxa(valor, numeroDeDias);
-        return taxa == -1 ? proximo.getTaxa(valor, numeroDeDias) : taxa;
+        
+        if(taxa == -1 && proximo != null){
+        	return proximo.getTaxa(valor, numeroDeDias);
+        }
+        
+        return taxa;
     }
     
     public abstract double calculaTaxa(double valor, long numeroDeDias);

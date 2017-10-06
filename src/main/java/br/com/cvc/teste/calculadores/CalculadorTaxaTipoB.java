@@ -20,7 +20,7 @@ public class CalculadorTaxaTipoB extends CalculadoraTaxa{
     @Override
     public double calculaTaxa(double valor, long numeroDeDias) {
          if (numeroDeDias > 0 && numeroDeDias <= 10){
-            return VALOR_DA_TAXA_PADRAO;
+            return VALOR_DA_TAXA_PADRAO * numeroDeDias;
          }
          return -1;
     }
